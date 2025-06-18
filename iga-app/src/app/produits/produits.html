@@ -1,0 +1,25 @@
+<div class="p-3">
+  <div class="card-body">
+    <h2>Produits component</h2>
+    <table class="table">
+      <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Delete</th>
+      </tr>
+      </thead>
+      <tbody>
+      @for (p of produits; track p){
+      <tr>
+        <td>{{p.id}}</td>
+        <td>{{p.name}}</td>
+        <td>{{p.price}}</td>
+        <td><button class="btn btn-danger" (click)="deleteProduct(p)">Supprimer</button></td>
+      </tr>
+      }
+      </tbody>
+    </table>
+  </div>
+</div>
