@@ -14,7 +14,7 @@ export class Produit {
     }
 
   deleteProduct(produit: any){
-    return this.http.get("http://localhost:8083/products/"+produit.id);
+    return this.http.delete("http://localhost:8083/products/"+produit.id);
     }
 }
 
