@@ -78,7 +78,7 @@ Dans le composant Produits, nous avons affiché une liste de produits avec une o
 
 ```
 
-![img_1.png](img_1.png)
+![img_1.png](images/img_1.png)
 
 Avant de connecter le backend, nous avons d’abord simulé des données localement :
 ```java
@@ -109,9 +109,9 @@ export class Produit {
 
 Maintenant on a lancé le backend Spring pour le lier avec le front
 
-![img_2.png](img_2.png)
+![img_2.png](images/img_2.png)
 
-![img_3.png](img_3.png)
+![img_3.png](images/img_3.png)
 
 ## 6. Connexion avec l’API Spring Boot
 Après avoir démarré notre backend Spring, nous avons modifié le service pour interagir avec l'API :
@@ -140,4 +140,4 @@ export class Produit {
 ```
 Nous nous sommes assurés que le backend accepte les requêtes CORS et que les routes des endpoints sont correctes.
 
-![img_4.png](img_4.png)
+![img_4.png](images/img_4.png)

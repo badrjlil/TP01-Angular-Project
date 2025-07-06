@@ -1,0 +1,105 @@
+/* --- Navigation Component Container --- */
+.p-3 {
+  /* Inherit/Adjust overall padding from previous components for consistency */
+  padding: 2.5rem !important;
+  background-color: #f8f9fa; /* Consistent light background */
+  min-height: 100vh; /* Ensure full height if this is the main layout wrapper */
+  display: flex;
+  flex-direction: column; /* Stack nav and router-outlet vertically */
+  align-items: center; /* Center content horizontally */
+  font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* --- Navigation Bar Styling --- */
+nav {
+  display: flex; /* Use flexbox for horizontal alignment of buttons */
+  justify-content: center; /* Center the buttons within the nav */
+  align-items: center; /* Vertically align buttons */
+  background-color: #ffffff; /* White background for the nav bar itself */
+  padding: 1.2rem 2.5rem; /* Generous padding inside the nav */
+  border-radius: 15px; /* More rounded corners for the nav container */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); /* Stronger, softer shadow */
+  margin-bottom: 2.5rem; /* More space below the navigation bar */
+  width: 100%; /* Take full width of parent */
+  max-width: 900px; /* **Increased max-width for the navigation bar** */
+  /* You can adjust this value further (e.g., 1000px, 1200px, or even 100% with side padding) */
+  gap: 20px; /* Increased space between buttons */
+}
+
+/* --- Button Styling --- */
+.btn-outline-primary {
+  color: #007bff; /* Primary blue text color */
+  border-color: #007bff; /* Primary blue border */
+  background-color: transparent; /* Transparent background */
+  padding: 0.8rem 2rem; /* Slightly more padding for buttons to fill wider space */
+  border-radius: 30px; /* Pill-shaped buttons */
+  font-weight: 600; /* Bolder text for buttons */
+  text-transform: uppercase; /* Uppercase text for a modern look */
+  letter-spacing: 0.04em; /* Slight letter spacing */
+  transition: all 0.3s ease; /* Smooth transitions for all properties */
+  position: relative; /* For potential pseudo-element effects */
+  overflow: hidden; /* Ensure overflow is hidden for transition effects */
+  flex-grow: 1; /* Allow buttons to grow and fill space, distributing width */
+  /* max-width: is removed or increased here if you want buttons to stretch more */
+  max-width: 200px; /* Slightly increased optional max-width for individual buttons */
+}
+
+.btn-outline-primary:hover,
+.btn-outline-primary.active { /* Apply active styles to the current route button */
+  color: #ffffff; /* White text on hover/active */
+  background-color: #007bff; /* Solid primary blue background */
+  border-color: #007bff;
+  transform: translateY(-2px); /* Slight lift effect on hover/active */
+  box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3); /* Subtle blue shadow */
+}
+
+.btn-outline-primary:active {
+  transform: translateY(0); /* Press down effect on click */
+  box-shadow: 0 2px 8px rgba(0, 123, 255, 0.2);
+}
+
+/* Remove ms-2 as we are using gap property */
+.ms-2 {
+  margin-left: 0 !important;
+}
+
+/* --- Router Outlet Styling (Optional but recommended) --- */
+router-outlet {
+  width: 100%;
+  display: block; /* Router outlet is a custom element, ensure it's a block */
+}
+
+/* Accessibility: Focus outline */
+*:focus-visible {
+  outline: 3px solid #007bff; /* Primary color outline for focus */
+  outline-offset: 3px;
+  border-radius: 4px; /* Adjust border-radius as needed for different elements */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 992px) { /* Adjust breakpoint for wider nav */
+  nav {
+    max-width: 80%; /* Allow nav to take more width on medium screens */
+    padding: 1.2rem 2rem; /* Slightly adjust padding */
+    gap: 15px; /* Slightly reduce gap if needed */
+  }
+}
+
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column; /* Stack buttons vertically on smaller screens */
+    padding: 1rem;
+    max-width: 90%; /* Allow nav to take more width on smaller screens */
+  }
+
+  .btn-outline-primary {
+    width: 100%; /* Make buttons full width when stacked */
+    margin-bottom: 10px; /* Add space between stacked buttons */
+    max-width: none; /* Remove max-width constraint when stacked */
+    padding: 0.8rem 1.5rem; /* Adjust padding for full width buttons */
+  }
+
+  .btn-outline-primary:last-child {
+    margin-bottom: 0; /* No margin below the last button */
+  }
+}

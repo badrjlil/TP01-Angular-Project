@@ -17,11 +17,13 @@ public class WebMvcProductsApplication {
     CommandLineRunner commandLineRunner(ProductRepository productRepository){
        return args -> {
            Product product = Product.builder()
-                   .name("Computer").price(5400).quantity(11)
+                   .name("Laptop Dell XPS 13").price(9500).quantity(15)
                    .build();
            productRepository.save(product);
-           productRepository.save(Product.builder().name("Printer").price(1299).quantity(11).build());
-           productRepository.save(Product.builder().name("Smart Phone").price(12000).quantity(33).build());
+           productRepository.save(Product.builder().name("Apple AirPods Pro").price(2400).quantity(30).build());
+           productRepository.save(Product.builder().name("Samsung 4K Monitor").price(3700).quantity(20).build());
+           productRepository.save(Product.builder().name("Logitech MX Master 3 Mouse").price(1120).quantity(40).build());
+           productRepository.save(Product.builder().name("External SSD 1TB (SanDisk)").price(1250).quantity(25).build());
            productRepository.findAll().forEach(p-> System.out.println(p.toString()));
        } ;
     }

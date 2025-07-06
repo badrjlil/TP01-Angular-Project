@@ -1,12 +1,13 @@
 <div class="p-3">
-  <div class="card-body">
-    <h2>Produits component</h2>
+  <div class="card-body" style="width: 900px">
+    <h2>Liste des produits</h2>
     <table class="table">
       <thead>
       <tr>
         <th>ID</th>
         <th>Name</th>
         <th>Price</th>
+        <th>Quantity</th>
         <th>Delete</th>
       </tr>
       </thead>
@@ -16,6 +17,7 @@
         <td>{{p.id}}</td>
         <td>{{p.name}}</td>
         <td>{{p.price}}</td>
+        <td>{{p.quantity}}</td>
         <td><button class="btn btn-danger" (click)="deleteProduct(p)">Supprimer</button></td>
       </tr>
       }

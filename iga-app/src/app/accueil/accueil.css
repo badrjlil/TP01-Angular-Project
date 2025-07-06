@@ -1,0 +1,173 @@
+/* --- General Container for all components --- */
+.p-3 {
+  padding: 2.5rem !important;
+  background-color: #f8f9fa; /* Consistent light background */
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Align content to the top */
+  font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* --- Card Body Base Style (Shared by all cards) --- */
+.card-body {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  padding: 2.5rem;
+  width: 100%;
+  max-width: 900px; /* Default max-width for cards, adjust as needed for other components */
+  margin: 0 auto;
+}
+
+/* --- Accueil Component Specific Styles --- */
+.welcome-card {
+  text-align: center; /* Center all text content within the welcome card */
+  max-width: 950px; /* Make the welcome card slightly wider for more content */
+  /* If you want it even wider, increase this value */
+}
+
+.welcome-title {
+  font-size: 2.8rem; /* Larger, more impactful title */
+  color: #343a40;
+  margin-bottom: 0.8rem; /* Less space below title before subtitle */
+  font-weight: 700;
+  position: relative;
+  padding-bottom: 15px; /* Space for a more prominent underline */
+}
+
+.welcome-title::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 120px; /* Wider underline for main title */
+  height: 5px; /* Thicker underline */
+  background-image: linear-gradient(to right, #007bff, #6a11cb); /* Gradient underline */
+  border-radius: 3px;
+}
+
+.welcome-subtitle {
+  font-size: 1.5rem; /* Prominent subtitle */
+  color: #6c757d; /* Muted but clear */
+  margin-bottom: 2.5rem; /* More space below subtitle */
+  font-weight: 300; /* Lighter weight for tagline */
+}
+
+.welcome-content p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #495057;
+  margin-bottom: 3rem; /* Space before features */
+  max-width: 800px; /* Keep main paragraph readable */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* --- Features Grid --- */
+.features-grid {
+  display: grid;
+  /* Adjust grid-template-columns for 2 items instead of 3 */
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Adjusted minmax for 2 items */
+  gap: 25px; /* Space between feature items */
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.feature-item {
+  background-color: #f7fafd; /* Very light blue background for features */
+  border-radius: 10px;
+  padding: 25px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* Subtle shadow for each feature */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  text-decoration: none; /* Remove underline from <a> tag */
+  color: inherit; /* Inherit text color from parent */
+}
+
+.feature-item:hover {
+  transform: translateY(-8px); /* Lift effect on hover */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); /* More pronounced shadow */
+}
+
+.feature-icon {
+  font-size: 3.5rem; /* Large icons */
+  color: #007bff; /* Primary blue color for icons */
+  margin-bottom: 15px;
+  animation: pulse 1.5s infinite ease-in-out; /* Subtle pulsing animation for icons */
+}
+
+/* Animation for feature icons */
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.05); opacity: 0.9; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+
+.feature-item h3 {
+  font-size: 1.5rem;
+  color: #343a40;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.feature-item p {
+  font-size: 1em;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 0; /* Remove default paragraph margin */
+}
+
+/* --- Call to Action Button --- */
+.cta-button {
+  background-image: linear-gradient(to right, #007bff 0%, #6a11cb 100%); /* Blue to purple gradient */
+  border: none;
+  border-radius: 30px; /* Pill-shaped button */
+  padding: 1.2rem 2.8rem; /* Generous padding */
+  font-size: 1.2rem; /* Larger font size */
+  font-weight: 600;
+  color: white;
+  box-shadow: 0 6px 20px rgba(0, 123, 255, 0.3); /* Soft shadow */
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.cta-button:hover {
+  transform: translateY(-5px); /* More pronounced lift on hover */
+  box-shadow: 0 10px 30px rgba(0, 123, 255, 0.4); /* Stronger shadow on hover */
+  background-image: linear-gradient(to right, #0056b3 0%, #5a0ebf 100%); /* Slightly darker gradient */
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+  .welcome-title {
+    font-size: 2.2rem;
+  }
+  .welcome-subtitle {
+    font-size: 1.2rem;
+  }
+  .welcome-content p {
+    font-size: 1em;
+  }
+  .features-grid {
+    grid-template-columns: 1fr; /* Stack features vertically on small screens */
+    gap: 20px;
+  }
+  .feature-item {
+    padding: 20px;
+  }
+  .cta-button {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+  }
+  .card-body {
+    padding: 2rem;
+  }
+}
